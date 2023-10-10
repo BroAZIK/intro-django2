@@ -2,7 +2,7 @@ from django.urls import path
 from django.http import HttpResponse, HttpRequest
 
 
-def index(request: HttpRequest) -> HttpResponse:
+def sum(request: HttpRequest) -> HttpResponse:
 
     if request.method == 'GET':
         a = request.GET.get('a')
@@ -12,7 +12,12 @@ def index(request: HttpRequest) -> HttpResponse:
 
     return HttpResponse(f"{a} + {b} = {result}")
 
+def hi(request: HttpRequest, name: str) -> HttpResponse:
+
+    return HttpResponse(f"Hi {name}")
+
 
 urlpatterns = [
-    path('home/', index)
+    path('sum/', sum),
+    path('hi/<name>', hi)
 ]

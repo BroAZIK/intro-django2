@@ -5,10 +5,12 @@ from django.http import HttpResponse, HttpRequest
 def index(request: HttpRequest) -> HttpResponse:
 
     if request.method == 'GET':
-        name = request.GET.get('name')
-        print(name)
+        a = request.GET.get('a')
+        b = request.GET.get('b')
 
-    return HttpResponse(f"Salom {name}")
+        result = int(a) + int(b)
+
+    return HttpResponse(f"{a} + {b} = {result}")
 
 
 urlpatterns = [

@@ -4,7 +4,11 @@ from django.http import HttpResponse, HttpRequest
 
 def index(request: HttpRequest) -> HttpResponse:
 
-    return HttpResponse("Hello, world. You're at the index.")
+    if request.method == 'GET':
+        name = request.GET.get('name')
+        print(name)
+
+    return HttpResponse(f"Salom {name}")
 
 
 urlpatterns = [

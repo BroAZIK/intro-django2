@@ -1,1 +1,3 @@
 # intro-django
+
+core, config

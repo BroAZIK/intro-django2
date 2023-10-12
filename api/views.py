@@ -1,18 +1,12 @@
 from django.http import HttpResponse, HttpRequest
 
 
-def sum(request: HttpRequest) -> HttpResponse:
+def home(request: HttpRequest) -> HttpResponse:
 
-    if request.method == 'GET':
-        a = request.GET.get('a')
-        b = request.GET.get('b')
-
-        result = int(a) + int(b)
-
-    return HttpResponse(f"{a} + {b} = {result}")
+    return HttpResponse(f"API")
 
 
-def hi(request: HttpRequest, name: str) -> HttpResponse:
+def about(request: HttpRequest) -> HttpResponse:
 
-    return HttpResponse(f"Hi {name}")
+    return HttpResponse(f"Hi")
     

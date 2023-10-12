@@ -1,8 +1,7 @@
-from django.urls import path
-from api.views import sum, hi
+from django.urls import path, include
 
 
 urlpatterns = [
-    path('sum/', sum),
-    path('hi/<name>', hi)
+    path('api/', include('api.urls')),
+    path('dashboard/', include('dashboard.urls')),
 ]
